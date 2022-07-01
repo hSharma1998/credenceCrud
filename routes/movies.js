@@ -55,7 +55,7 @@ router.patch('/:id',async(req,res)=> {
 
 router.delete('/:id',async(req,res)=> {
     try{
-        const movie = await Movie.remove(req.params.id) 
+        const movie = await Movie.findByIdAndDelete(req.params.id) 
         res.json(movie)   
     }catch(err){
         res.send('Error')
